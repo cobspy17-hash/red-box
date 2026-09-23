@@ -1,0 +1,68 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Game</title>
+
+    <style>
+        body {
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        #game {
+            width: 600px;
+            height: 400px;
+            background: darkgreen;
+            margin: 20px auto;
+            position: relative;
+            border: 3px solid white;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 Click the Box</h1>
+
+    <h2>Score: <span id="score">0</span></h2>
+
+    <div id="game">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        let score = 0;
+
+        const box = document.getElementById("box");
+        const scoreText = document.getElementById("score");
+
+        box.onclick = function() {
+
+            score++;
+
+            scoreText.textContent = score;
+
+            let x = Math.random() * 550;
+            let y = Math.random() * 350;
+
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+        };
+    </script>
+
+</body>
+</html>
+```
